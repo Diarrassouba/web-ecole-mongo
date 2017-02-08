@@ -1,7 +1,11 @@
 package ci.kossovo.ecole;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import ci.kossovo.ecole.web.models.personne.ApplicationModelPersonne;
 
 @SpringBootApplication
 public class WebEcoleMongoApplication {
@@ -13,6 +17,7 @@ public class WebEcoleMongoApplication {
 	/*@Bean
 	public CommandLineRunner personneMetier(ApplicationModelPersonne modelPersonne) {
 		return (args) -> {
+			modelPersonne.spprimer(modelPersonne.findAll());
 			// save a couple of customers
 			modelPersonne.creer(new Personne("Mr", "Jack", "Bauer","CNI0021"));
 			modelPersonne.creer(new Personne("Mlle", "Chloe", "O'Brian","CNI0022"));
