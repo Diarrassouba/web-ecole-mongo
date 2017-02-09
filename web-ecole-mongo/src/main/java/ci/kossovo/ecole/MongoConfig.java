@@ -1,15 +1,17 @@
 package ci.kossovo.ecole;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
+@Configuration
 public class MongoConfig extends AbstractMongoConfiguration {
 
 	@Override
 	protected String getDatabaseName() {
-		return "ecole_db";
+		return "dbecole";
 	}
 
 	@Override

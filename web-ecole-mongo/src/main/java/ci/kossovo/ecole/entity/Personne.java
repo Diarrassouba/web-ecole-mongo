@@ -65,7 +65,7 @@ public class Personne extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		return String.format("Personne[%s,%s,%s,%s]", id, titre, nomComplet);
+		return String.format("Personne[%s,%s,%s,%s]", id, titre, nom,prenom);
 	}
 
 	public String getNomComplet() {
