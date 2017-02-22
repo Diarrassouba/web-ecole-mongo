@@ -15,6 +15,8 @@ public interface PersonneRepository extends MongoRepository<Personne, String> {
 	List<Personne> findByNomIgnoreCaseAndPrenomIgnoreCase(String nom, String prenom);
 
 	List<Personne> findByTypeAndNomAndPrenom(String type, String nom, String prenom);
+	/*@Query("{'_class':Etudiant.class}")
+	List<Personne> findEtudiants();*/
 
 	Personne findByNumCni(String numcni);
 }

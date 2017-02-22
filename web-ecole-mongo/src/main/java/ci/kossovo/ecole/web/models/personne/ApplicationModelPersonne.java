@@ -14,6 +14,7 @@ public class ApplicationModelPersonne implements IPersonneMetier {
 	@Autowired
 	private IPersonneMetier personneMetier;
 
+
 	@Override
 	public Personne creer(Personne entity) throws InvalidPersonneException {
 		return personneMetier.creer(entity);
@@ -90,11 +91,7 @@ public class ApplicationModelPersonne implements IPersonneMetier {
 		return personneMetier.chercherAdministrateurParMc(mc);
 	}
 
-	@Override
-	public List<Personne> chercherUserParMc(String mc) {
-		return personneMetier.chercherUserParMc(mc);
-	}
-
+	
 	@Override
 	public List<Personne> listEtudiants() {
 		return personneMetier.listEtudiants();
@@ -120,6 +117,12 @@ public class ApplicationModelPersonne implements IPersonneMetier {
 	@Override
 	public List<Personne> personneAll() {
 		return personneMetier.personneAll();
+	}
+
+	@Override
+	public List<Personne> chercherUserParMc(String mc) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

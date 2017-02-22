@@ -2,6 +2,7 @@ package ci.kossovo.ecole.metier;
 
 import java.util.List;
 
+import ci.kossovo.ecole.entity.Etudiant;
 import ci.kossovo.ecole.entity.Personne;
 
 public interface IPersonneMetier extends IMetier<Personne, String> {
@@ -19,6 +20,7 @@ public interface IPersonneMetier extends IMetier<Personne, String> {
 	public List<Personne> listAdministrateurs();
 	public List<Personne> userAll();
 	public List<Personne> personneAll();
+	//public List<Personne> personneAll(Object type);
 	
 	
 	

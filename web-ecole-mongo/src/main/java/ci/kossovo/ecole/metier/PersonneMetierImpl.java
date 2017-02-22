@@ -1,11 +1,13 @@
 package ci.kossovo.ecole.metier;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ci.kossovo.ecole.dao.PersonneRepository;
+import ci.kossovo.ecole.entity.Etudiant;
 import ci.kossovo.ecole.entity.Personne;
 import ci.kossovo.ecole.exceptions.InvalidPersonneException;
 
@@ -49,7 +51,17 @@ public class PersonneMetierImpl implements IPersonneMetier {
 	public List<Personne> findAll() {
 		return personneRepository.findAll();
 	}
-
+	
+	/*//liste de personnes par type
+		@Override
+		public List<Personne> personneAll(Object o) {
+			List<Personne> personnes=personneRepository.findAll();
+			//filtre par type de personnes
+			List<Personne> typePersonnes=personnes.stream().filter(
+					p-> p.).collect(Collectors.toList());
+			return typePersonnes;
+		}
+*/
 	@Override
 	public void spprimer(List<Personne> entities) {
 		personneRepository.delete(entities);
@@ -128,8 +140,9 @@ public class PersonneMetierImpl implements IPersonneMetier {
 
 	@Override
 	public List<Personne> listEtudiants() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Personne> pers=personneRepository.findAll();
+		List<Personne>etudiants=pers.stream().filter(p->p.getClass()==Etudiant.class).collect(Collectors.toList());
+		return etudiants;
 	}
 
 	@Override
